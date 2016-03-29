@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\HP\\Pictures\\sample\\sample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\loading_thumbnail.png",
+        "source": "C:\\Users\\HP\\Pictures\\sample\\sample\\app\\src\\main\\res\\drawable-mdpi\\loading_thumbnail.png"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Pictures\\sample\\sample\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\no_thumbnail.png",
+        "source": "C:\\Users\\HP\\Pictures\\sample\\sample\\app\\src\\main\\res\\drawable-mdpi\\no_thumbnail.png"
+    }
+]
