@@ -21,35 +21,99 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * A simple YouTube Android API demo application which shows how to create a simple application that
  * displays a YouTube Video in a {@link YouTubePlayerView}.
- * <p>
+ * <p/>
  * Note, to use a {@link YouTubePlayerView}, your activity must extend {@link YouTubeBaseActivity}.
  */
-public class PlayerViewDemoActivity extends YouTubeFailureRecoveryActivity {
+public class PlayerViewDemoActivity extends YouTubeFailureRecoveryActivity implements YouTubePlayer.PlaybackEventListener, YouTubePlayer.PlayerStateChangeListener {
 
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.playerview_demo);
+    private static final String TAG = PlayerViewDemoActivity.class.getSimpleName();
 
-    YouTubePlayerView youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
-    youTubeView.initialize(DeveloperKey.DEVELOPER_KEY, this);
-  }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.playerview_demo);
 
-  @Override
-  public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player,
-      boolean wasRestored) {
-    if (!wasRestored) {
-      player.cueVideo("wKJ9KzGQq0w");
+        YouTubePlayerView youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        youTubeView.initialize(DeveloperKey.DEVELOPER_KEY, this);
     }
-  }
 
-  @Override
-  protected YouTubePlayer.Provider getYouTubePlayerProvider() {
-    return (YouTubePlayerView) findViewById(R.id.youtube_view);
-  }
+    private YouTubePlayer mYouTubePlayer;
 
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player,
+                                        boolean wasRestored) {
+        if (!wasRestored) {
+            player.cueVideo("mH9kYn4L8TI");
+            player.setPlaybackEventListener(this);
+            player.setPlayerStateChangeListener(this);
+            mYouTubePlayer = player;
+        }
+
+        Log.d(TAG, "current Timestamp---" + player.getCurrentTimeMillis());
+    }
+
+    @Override
+    protected YouTubePlayer.Provider getYouTubePlayerProvider() {
+        return (YouTubePlayerView) findViewById(R.id.youtube_view);
+    }
+
+    @Override
+    public void onPlaying() {
+        Log.d(TAG, "onPlaying---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onPaused() {
+        Log.d(TAG, "onPaused---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onStopped() {
+        Log.d(TAG, "onStopped---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onBuffering(boolean b) {
+        Log.d(TAG, "onBuffering---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onSeekTo(int i) {
+        Log.d(TAG, "onSeekTo---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onLoading() {
+        Log.d(TAG, "onLoading---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onLoaded(String s) {
+        Log.d(TAG, "onLoaded---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onAdStarted() {
+        Log.d(TAG, "onAdStarted---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onVideoStarted() {
+        Log.d(TAG, "onVideoStarted---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onVideoEnded() {
+        Log.d(TAG, "onVideoEnded---" + (mYouTubePlayer != null ? mYouTubePlayer.getCurrentTimeMillis() : "null"));
+    }
+
+    @Override
+    public void onError(YouTubePlayer.ErrorReason errorReason) {
+        Log.d(TAG, "onPlaying---" + errorReason.toString());
+    }
 }

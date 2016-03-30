@@ -16,13 +16,13 @@ ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:1
 	xmlns:android
 		ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:17:11-69
 uses-sdk
-ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:22:3-70
+ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:22:3-71
 	android:targetSdkVersion
-		ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:22:39-68
+		ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:22:40-69
 		INJECTED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:22:13-38
+		ADDED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml:22:13-39
 		INJECTED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\HP\Pictures\sample\sample\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
