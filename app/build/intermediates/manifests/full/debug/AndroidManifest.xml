@@ -20,15 +20,16 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="16" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application android:label="@string/youtube_api_demo" >
         <activity
-            android:name="com.examples.youtubeapidemo.YouTubeAPIDemoActivity"
-            android:label="@string/youtube_api_demo" >
+            android:name="com.examples.youtubeapidemo.fragmentview.MainActivity"
+            android:label="@string/youtube_api_demo"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
